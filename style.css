@@ -1,0 +1,280 @@
+/* Definindo icones customizados pra botões */
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.woff') format('woff'), url('fonts/icomoon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-profile:before {
+    content: "\e923";
+  }
+  .icon-cart:before {
+    content: "\e93a";
+  }
+  .icon-calendar:before {
+    content: "\e953";
+  }
+  .icon-user:before {
+    content: "\e971";
+  }
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+
+/* Definições globais */
+* {
+    box-sizing: border-box;
+}
+
+@-ms-viewport{
+    width: device-width;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: rgba(36, 63, 140, 1);
+    background-color: rgba(229, 233, 240, 1);
+}
+
+#page-container {
+    background-color: rgba(229, 233, 240, 1);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1{
+    font-size: 35pt;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Wrappers com propósito de manter as cores dividas da página */
+#wrapper-header {
+    background-color: rgba(36, 63, 140, 1);
+}
+
+#wrapper-content{
+    background-color: rgba(229, 233, 240, 1);
+}
+
+/* Definindo largura fixa da página pra resoluções altas */
+.page-header {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1100px;
+}
+
+.content-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 960px;
+}
+
+/* Topo da página */
+.page-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    background-color: rgba(36, 63, 140, 1);
+    overflow: hidden;
+}
+
+.page-header a {
+    flex-grow: 1;
+    color:white;
+    float:left;
+    text-decoration: none;
+    text-align: center;
+    /* padding: 0 12px; */
+    font-size: 15px;
+    font-weight: bold;
+    /* line-height:83px; */
+}
+
+
+
+a.search {
+    flex-grow: 3;
+}
+
+a.search input[type=text]{
+    font-size: 15px;
+    width: 100%;
+    padding:5px;
+}
+
+.page-header a.logo {
+    font-size: 35px;
+}
+.header-right{
+    float: right;
+}
+
+.header-right a.search {
+    width: 40%;
+}
+
+.header-nav {
+    background-color: #E5E9F0;
+}
+
+.icone-menu {
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+/* Conteúdo principal */
+
+/* Árvore de navegação */
+a.logo {
+
+}
+.page-info {
+    margin: auto 15px;
+}
+
+.nav-tree {
+    color: rgba(130, 130, 130, 1);
+    font-size:10pt;
+    font-weight: bold;
+}
+
+.page-info h2 {
+    margin: 0.1em 0;
+}
+
+.content-container {
+    margin: 1em auto;
+}
+
+.content-row {
+    margin: 30px 0;
+    padding: 25px 50px;
+    background-color: white;
+    border-radius: 15px;
+}
+
+#destaque {
+    background-image: url(content/Screen_Shot_2020-10-08_at_17.09.40.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+}
+
+article.preview {
+    background-color: white;
+}
+
+/* Formatação da entrada de destaque */
+#destaque article {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 22px;
+}
+
+
+#destaque article h1 span{
+    display: table;
+    font-weight: normal;
+}
+
+#destaque article span.link{
+    color: rgba(79, 192, 224, 1);
+    padding: 0 10px;
+    font-size: 15px;
+    font-style: normal;
+}
+
+
+/* Formatação dos cards  */
+article.preview{
+    display:flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+article.preview div.thumbnail {
+    max-width: 220px;
+    background-image: url(content/Oval_2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 50px;
+    padding: 40px 1px;
+}
+
+
+article.preview div.thumbnail figure img{
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+article.preview div.text {
+    font-size: 15px;
+}
+
+/* Seleção improvisada para utilizar as imagens que não vieram padronizadas, remove a imagem de fundo da div a cada container par */
+.content-row:nth-child(even) > article.preview div.thumbnail {
+    background-image: none;
+    padding: 0;
+}
+
+.content-row:nth-child(even) > article.preview div.thumbnail figure {
+    margin-left: 0;
+}
+
+/* Definindo formatação do card de orientação */
+.content-row article.steps .steps-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content-row article.steps .steps-desc {
+    margin: 0 auto 20px;
+    text-align: center;
+    width: 70%;
+}
+
+.content-row article.steps .steps-gallery {
+    display: flex;
+}
+
+.content-row article.steps .steps-gallery figure{
+    width: 25%;
+}
+
+
+.content-row article.steps .steps-gallery figure figcaption {
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+}
+
